@@ -21,9 +21,9 @@ st.set_page_config(
 # LOAD DATA + MODEL
 # --------------------------------------------------
 
-model = joblib.load("../Models/random_forest_model.pkl")
-thresholds = joblib.load("../Models/risk_thresholds.pkl")
-data = pd.read_csv("../Outputs/weekly_influenza_model_data.csv")
+model = joblib.load("Models/random_forest_model.pkl")
+thresholds = joblib.load("Models/risk_thresholds.pkl")
+data = pd.read_csv("Outputs/weekly_influenza_model_data.csv")
 
 data["WeekBeginning"] = pd.to_datetime(data["WeekBeginning"])
 data = data.sort_values("WeekBeginning").reset_index(drop=True)
